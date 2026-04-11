@@ -1,0 +1,97 @@
+/* PING WENCHAO 226969 */
+
+/* Initialize global page settings and background */
+body {
+    margin: 0;
+    padding: 0;
+    /* Dark background outside the form, similar to IDE/dark mode */
+    background-color: #2b2b2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Matching the font used in the Lab 1 GUI */
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+}
+
+/* Styling for the main registration form panel */
+.form-container {
+    /* Greenish background color matching your Java GUI */
+    background-color: #b9c6a6;
+    padding: 30px;
+    border-radius: 8px;
+    width: 480px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Layout for the title and icon at the top */
+.form-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+/* Sizing for the user icon */
+.form-header img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+/* Styling for the 'Register' title */
+.form-header h2 {
+    margin: 0;
+    font-size: 36px;
+    color: #000;
+}
+
+/* Flexbox layout to align labels and text fields side-by-side */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Styling and fixed width for the labels to ensure inputs align perfectly */
+.form-group label {
+    flex: 0 0 170px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Styling for the text input boxes */
+.form-group input {
+    flex: 1;
+    padding: 6px;
+    font-size: 16px;
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+    border: 1px solid #777;
+    border-radius: 2px;
+}
+
+/* Layout container to align buttons to the right side */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* Shared styling for both Register and Cancel buttons */
+button {
+    padding: 5px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Segoe Print", "Comic Sans MS", cursive;
+    cursor: pointer;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+
+/* Subtle background change when mouse hovers over buttons */
+button:hover {
+    background-color: #ddd;
+}
