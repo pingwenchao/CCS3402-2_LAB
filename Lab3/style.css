@@ -1,0 +1,118 @@
+/* PING WENCHAO 226969 */
+
+/* Global settings and modern system font */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1d1d1f;
+}
+
+/* Card layout with soft shadow and rounded corners */
+.auth-card {
+    background: rgba(255, 255, 255, 0.9);
+    
+    /* Standard blur effect */
+    backdrop-filter: blur(10px);
+    
+    /* Safari compatibility fix for the blur effect */
+    -webkit-backdrop-filter: blur(10px);
+    
+    padding: 40px;
+    border-radius: 20px;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Header and Logo styling */
+.header-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.header-section p {
+    color: #86868b;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Input group layout */
+.input-container {
+    margin-bottom: 20px;
+}
+
+.input-container label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #86868b;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #d2d2d7;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+/* Focus effect on input fields */
+.input-container input:focus {
+    outline: none;
+    border-color: #0071e3;
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.1);
+}
+
+/* Primary blue button styling */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background-color: #0071e3;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #0077ed;
+}
+
+/* Bottom navigation link styling */
+.nav-text {
+    text-align: center;
+    font-size: 14px;
+    color: #86868b;
+    margin-top: 20px;
+}
+
+.nav-text a {
+    color: #0071e3;
+    text-decoration: none;
+    font-weight: 500;
+}
