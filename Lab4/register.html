@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>User Registration - Lab 4</title>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="auth-card">
+            
+            <div class="header-section">
+                <img src="images/new.png" alt="Icon" class="auth-logo">
+                <h1>Create Account</h1>
+                <p>Register for the Database System (Lab 4)</p>
+            </div>
+
+            <form id="registerForm">
+                <div class="input-container">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="email@example.com" required>
+                    <small id="emailFeedback" class="feedback-text"></small>
+                </div>
+
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Set your password" required>
+                    
+                    <div id="passwordReqs" class="password-reqs">
+                        <p id="req-length" class="req-item invalid">✖ Must be of length between 12 and 64</p>
+                        <p id="req-digit" class="req-item invalid">✖ Must contain at least one digit (0-9)</p>
+                        <p id="req-lower" class="req-item invalid">✖ Must contain at least one lowercase letter (a-z)</p>
+                        <p id="req-upper" class="req-item invalid">✖ Must contain at least one upper case letter (A-Z)</p>
+                        <p id="req-special" class="req-item invalid">✖ Must contain at least one special character</p>
+                        <p id="req-forbidden" class="req-item valid">✔ Must not contain ; , :</p>
+                        <p id="req-space" class="req-item valid">✔ Can't start or end with a space</p>
+                        <p id="req-name" class="req-item valid">✔ Can't contain first name or last name</p>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" placeholder="Repeat your password" required>
+                </div>
+
+                <div id="registerFeedback" class="form-feedback"></div>
+
+                <button type="submit" id="regBtn" class="btn-primary" disabled>Register</button>
+                
+                <p class="nav-text">Already have an account? <a href="login.html">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
