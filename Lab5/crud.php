@@ -36,18 +36,25 @@ switch ($action) {
         $password = trim($_POST['password']);
 
         if (empty($id)) {
-            // Create new user
+            // Create new user: Validate that password is provided
+            if (empty($password)) {
+                echo json_encode(["status" => "error", "message" => "Password is required for new users."]);
+                exit();
+            }
+
+            // Hash the password and insert new record
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
             $stmt = $conn->prepare("INSERT INTO users (name, email, password, category, status) VALUES (?, ?, ?, ?, ?)");
             $stmt->bind_param("sssss", $name, $email, $hashed_password, $category, $status);
         } else {
             // Update existing user
             if (!empty($password)) {
+                // Hash the new password if provided
                 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                 $stmt = $conn->prepare("UPDATE users SET name=?, email=?, password=?, category=?, status=? WHERE id=?");
                 $stmt->bind_param("sssssi", $name, $email, $hashed_password, $category, $status, $id);
             } else {
-                // Keep old password if input is blank
+                // Keep the existing password if input is blank
                 $stmt = $conn->prepare("UPDATE users SET name=?, email=?, category=?, status=? WHERE id=?");
                 $stmt->bind_param("ssssi", $name, $email, $category, $status, $id);
             }
