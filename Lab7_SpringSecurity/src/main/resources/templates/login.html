@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Authentication</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .auth-container { max-width: 420px; margin-top: 120px; }
+    </style>
+</head>
+<body>
+<div class="container auth-container">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white text-center">
+            <h4 class="mb-0">System Login</h4>
+        </div>
+        <div class="card-body">
+            <div th:if="${param.error}" class="alert alert-danger" role="alert">
+                Invalid username or password.
+            </div>
+            <div th:if="${param.logout}" class="alert alert-success" role="alert">
+                You have been successfully logged out.
+            </div>
+
+            <form th:action="@{/login}" method="post">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" class="form-control" required placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" required placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            </form>
+        </div>
+        <div class="card-footer text-muted text-center" style="font-size: 0.85rem;">
+            Student: PING WENCHAO | Matric No: 226969
+        </div>
+    </div>
+</div>
+</body>
+</html>
