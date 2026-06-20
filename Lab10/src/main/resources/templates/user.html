@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Corporate Security</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+        <span class="navbar-brand mb-0 h1">Enterprise Dashboard</span>
+        <span class="navbar-text text-white">PING WENCHAO - 226969</span>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-success text-white py-3">
+                    <h3 class="mb-0">Authenticated Profile Details</h3>
+                </div>
+                <div class="card-body p-5 text-center">
+
+                    <img src="https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff&rounded=true" alt="User Avatar" class="mb-4" style="width: 100px;">
+
+                    <h4 class="text-muted mb-4">Welcome back to the secure system!</h4>
+
+                    <div class="bg-light rounded p-4 mb-4 text-start shadow-sm border">
+                        <div class="mb-3">
+                            <span class="fw-bold fs-5 me-2">Username (Email):</span>
+                            <span class="fs-5 text-primary" sec:authentication="principal.username"></span>
+                        </div>
+                        <div>
+                            <span class="fw-bold fs-5 me-2">Granted Roles:</span>
+                            <span class="badge bg-danger fs-6" sec:authentication="principal.authorities"></span>
+                        </div>
+                    </div>
+
+                    <form th:action="@{/logout}" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-outline-danger btn-lg px-5 mt-3 rounded-pill">Secure Logout</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
